@@ -1,0 +1,14 @@
+# OS gereated files
+.DS_Store
+node_modules/
+js/vendor/
+js/lib
+.tmp
+css/occupancy-chart.css
+css/occupancy-chart.min.css
+css/bootstrap.min.css
+css/datepicker.min.css
+jquery.qtip.min.css
+chart*.json
+mall*.json
+fonts/

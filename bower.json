@@ -1,0 +1,20 @@
+{
+  "name": "occupancy-chart",
+  "version": "0.0.0",
+  "authors": [
+    "Terri Regan <contact@terriregan.com>"
+  ],
+  "description": "Chart that displays occupancy information over a period of time.",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "underscore": "~1.8.3",
+    "jquery-ui": "~1.11.4",
+    "moment": "~2.11.1"
+  }
+}

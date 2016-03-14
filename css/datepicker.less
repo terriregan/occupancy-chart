@@ -1,0 +1,123 @@
+body.datepicker-skin & {
+	.ui-widget {
+		font-family: 'Open Sans';
+		font-size: 1.1em;
+		background: lighten(#2a6b9b, 5%);
+		border: none;
+		border-radius: 0;
+		box-shadow: 0 1px 3px #ccc;
+	}
+
+	.ui-datepicker {
+		padding: 0;
+		width: 17em;
+	}
+
+	.ui-datepicker-header {
+		border: none;
+		border-bottom: 1px solid #2d97cb;
+		background: transparent;
+		font-weight: 500;
+		font-size: 11px;
+		color: #fff;
+		text-transform: uppercase;
+	}
+
+	.ui-datepicker .ui-datepicker-title {
+		margin-top: 1em;
+		margin-bottom: .8em;
+		line-height: 1.8;
+		text-align: center;
+	}
+
+	.ui-datepicker-header .ui-state-hover {
+		background: transparent;
+		border-color: transparent;
+		cursor: pointer;
+		border-radius: 0;
+		text-decoration: none;
+		color: darken(#2a6b9b, 10%);
+		font-weight: 700;
+	}
+
+	.ui-datepicker .ui-datepicker-prev-hover,
+	.ui-datepicker .ui-datepicker-next-hover,
+	.ui-datepicker .ui-datepicker-next,
+	.ui-datepicker .ui-datepicker-prev {
+		top: 1em;
+		border:none;
+		width: auto;
+		height: auto;
+	}
+
+	.ui-datepicker .ui-datepicker-prev span, 
+	.ui-datepicker .ui-datepicker-next span {
+		position: relative;
+	}
+
+	.ui-widget-header .ui-icon {
+		background: none;
+	}
+
+	.ui-widget-header a {
+		color: #ffffff;
+	}
+
+	.ui-datepicker .ui-datepicker-next {
+		right: 10px;
+		
+		&:before {
+			content: "\2192";
+			font-size: 16px;
+		}
+	}
+
+	.ui-datepicker .ui-datepicker-prev {
+		left: 10px;
+		
+		&:before {
+			content: "\2190";
+			font-size: 16px;
+		}
+	}
+	
+	.ui-datepicker table {
+		margin: 0;
+		width: 100%;
+	    font-size: .9em;
+	    border-collapse: collapse;
+	    background-color: #fff;
+	}
+
+	.ui-datepicker th {
+		padding: 1em 0;
+		color: #2a6b9b;
+		font-size: 10px;
+		font-weight: 700;
+		text-transform: uppercase;
+		border: none;
+		border-top: 1px solid #3fabdc;
+	}
+
+	.ui-datepicker td {
+		border: none;
+		padding: 0;
+	}
+
+	td .ui-state-default {
+		background: transparent;
+		border: none;
+		text-align: center;
+		padding: .8em 0;
+		margin: 0;
+		font-weight: normal;
+		font-size: 12px;
+	}
+
+	td .ui-state-active,
+	td .ui-state-hover {
+		background: #1b7fb0;
+		border-radius: 4px;
+		color: #f2f2f2;
+	}
+}

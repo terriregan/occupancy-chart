@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MacGavren Inventory</title>
+
+    <!-- fonts -->
+   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'> 
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  
+   <!--  LOCAL TESTING <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />  -->
+   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+  
+    <!-- vendor -->
+    <!-- build:css css/vendor.min.css -->
+    <link rel="stylesheet" type="text/css" href="js/vendor/jquery-ui/themes/ui-lightness/jquery-ui.min.css" />
+     <!-- endbuild -->
+   
+     <!-- build:css css/occupancy-chart.min.css -->
+    <link rel="stylesheet" type="text/css" href="css/jquery.qtip.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/occupancy-chart.css" />
+     <!-- endbuild -->
+
+</head>
+<body>
+
+    <div style="text-align: center;margin: 30px">
+        <button data-modal-id='#occupancy' data-url="chart_data_one" class="btn btn-primary btn-md" style="width: 150px">Chart - single entry </button>
+        <button data-modal-id='#occupancy' data-url="chart_data_test"  class="btn btn-primary btn-md" style="width: 150px">Chart Data</button>
+        <button data-modal-id='#occupancy' data-url="chart_bad_url" class="btn btn-primary btn-md" style="width: 150px">Error - bad url</button>
+
+        <p style="text-align: left;width: 400px; margin: 30px auto">Select a button to view the chart with different data sets. This verbiage is put here to test the fonts.</p>
+    </div>
+
+    <!-- in page display -->
+    <div id="s-occupancy"></div>
+
+    <!-- bootstrap modal -->
+    <div id="occupancy-modal" class="modal fade">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+         <div id="occupancy"></div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>  
+    
+    
+    <!-- vendor -->
+    <!-- build:js js/vendor.min.js -->
+    <script src="js/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="js/vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script src="js/lib/jquery.bootstrap-growl.min.js"></script>
+    <script src="js/vendor/moment/min/moment.min.js"></script>
+    <script src="js/vendor/jquery-ui/ui/datepicker.js"></script>
+    <script src="js/vendor/underscore/underscore-min.js"></script>
+    <script src="js/lib/jquery.qtip.min.js"></script>
+     <!-- endbuild -->
+
+   
+    <!-- LOCAL TESTING <script src="js/vendor/bootstrap.min.js"></script>  -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    
+    <!-- build:js js/occupancy-chart.min.js -->
+    <script src="js/templates.js"></script>
+    <script src="js/date-util.js"></script> 
+    <script src="js/occupancy.js"></script> 
+    <script src="js/occupancies.js"></script> 
+    <script src="js/date-cmp.js"></script>
+    <script src="js/occupancy-chart.js"></script>
+    <!-- endbuild -->
+
+    <script>
+        $(document).ready(function() {
+            $('.btn-primary').click( addOccupancyChart );
+
+            function addOccupancyChart( evt ) {              
+                /* Use options object to configure widths and height.  Do not use if accepting all of the defaults
+                var options = {
+                        'widthContainer' : 900,
+                        'widthCell' : 30, 
+                        'widthFirstCol' : 280,
+                        'heightContainer' : 300
+                    };
+                    mcgavren.occupancyChart.init( $('#occupancy'), 'chart_data_test.json', options );
+                */
+               
+                //var url = 'http://dev.mgmallplanner.com/app/fetchMallDataOccupancyChart.php?mallIds=73,79';
+                // mcgavren.occupancyChart.init( $('#occupancy'), url );
+                mcgavren.occupancyChart.init( $('#occupancy'), $(this).data('url') + '.json' );
+                $('#occupancy-modal').modal();
+            }
+          
+        });
+
+      
+    </script>
+
+</body>
+</html>
